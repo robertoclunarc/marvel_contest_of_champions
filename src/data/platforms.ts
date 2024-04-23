@@ -9,6 +9,7 @@ export default [
         "idluchador": 130,
         "nombre": "Human Torch",
         "clase": "Science",
+        "idclase": "3",
         "date_release": "September 5, 2019",
         "image_background": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
       }
@@ -21,7 +22,8 @@ export default [
 		"luchadoresInmunes": [
 			{
 				"idluchador": 146,
-				"nombre": "Black Widow (Claire Voyant)",				
+				"nombre": "Black Widow (Claire Voyant)",
+        "idclase": "1",				
 				"date_release": "September 5, 2019",
 				"image_background": "https://playcontestofchampions.com/wp-content/uploads/2021/11/champion-black-widow-claire-voyant-360x360.jpg",
 				"clase": "Mystic"
@@ -29,6 +31,7 @@ export default [
 			{
 				"idluchador": 70,
 				"nombre": "Colossus",
+        "idclase": "2",
 				"date_release": "December 10, 2014",
 				"image_background": "https://playcontestofchampions.com/wp-content/uploads/2021/11/champion-colossus-360x360.jpg",
 				"clase": "Mutant"
@@ -36,6 +39,7 @@ export default [
 			{
 				"idluchador": 173,
 				"nombre": "Cosmic Ghost Rider",
+        "idclase": "1",
 				"date_release": "October 22, 2020",
 				"image_background": "https://playcontestofchampions.com/wp-content/uploads/2021/11/champion-cosmic-ghost-rider-360x360.jpg",
 				"clase": "Cosmic"

@@ -15,10 +15,11 @@ import { IconType } from "react-icons";
 import { ILuchador } from "../hooks/useluchadores";
 
 interface Props {
-  danos: ILuchador[];
+  danos: IDamage[];
 }
 
 const PlatformIconList = ({ danos = [] }: Props) => {
+  console.log(danos);
   const iconMap: { [key: string]: IconType } = { 
     Hemorragia: FaWindows,
     Envenenamiento: FaPlaystation,
@@ -28,10 +29,10 @@ const PlatformIconList = ({ danos = [] }: Props) => {
     Degeneracion: FaLinux, 
     Roptura: FaAndroid,
     Mejoras: MdPhoneIphone,
-    /*'Destruccion de Armadura': BsGlobe,
+    'Destruccion de Armadura': BsGlobe,
     'Control Mental': BsGlobe,
     'Bloqueo Curacion': BsGlobe,
-    'Drenaje/Quemapoderes': BsGlobe,*/
+    'Drenaje/Quemapoderes': BsGlobe,
     Represion: BsGlobe,
     Entorpecimiento: BsGlobe,
   }
@@ -39,7 +40,7 @@ const PlatformIconList = ({ danos = [] }: Props) => {
   return (
     <HStack marginY={1}> 
       {danos.map((dn) => (
-        <Icon key={dn.idluchador} as={iconMap[dn.nombre]} color='gray.500'/>
+        <Icon key={dn.iddamage} as={iconMap[dn.damage]} color='gray.500'/>
       ))}
     </HStack>
   );

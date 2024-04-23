@@ -4,9 +4,9 @@ import GameGrid from "./components/GameGrid";
 import GameHeading from "./components/GameHeading";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
-import PlatformSelector from "./components/PlatformSelector";
+import DamageSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
-import { IDamage } from "./hooks/useGames";
+import { IDamage, ILuchadoresConInmunidades } from "./hooks/useGames";
 import { ILuchador} from "./hooks/useluchadores";
 
 
@@ -19,7 +19,7 @@ export interface GameQuery {
 
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
-  console.log(gameQuery);
+  console.log(JSON.stringify(gameQuery));
   return (
     <Grid
       templateAreas={{
@@ -44,7 +44,7 @@ function App() {
           <GameHeading gameQuery={gameQuery} />
           <Flex marginBottom={5}>
             <Box marginRight={5}>
-              <PlatformSelector selectedPlatform={gameQuery.damage} onSelectPlatform={(damage) => setGameQuery({ ...gameQuery, damage }) } />
+              <DamageSelector selectedPlatform={gameQuery.damage} onSelectPlatform={(damage) => setGameQuery({ ...gameQuery, damage  }) } />
             </Box>
             <SortSelector sortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })} />
           </Flex>

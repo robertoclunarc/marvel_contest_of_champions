@@ -1,27 +1,27 @@
 
 import { Card, CardBody, Heading, HStack, Image, Text } from '@chakra-ui/react'
 import React from 'react'
-import { IDamage, Iinmunes } from '../hooks/useGames'
+import { IDamage, Iinmunes, ILuchadoresConInmunidades } from '../hooks/useGames'
 import getCroppedImageUrl from '../services/image-url'
 import CriticScore from './CriticScore'
 import Emoji from './Emoji'
 import PlatformIconList from './PlatformIconList'
-import { ILuchador } from '../models/luchadores.interface'
+import { ILuchador } from '../hooks/useluchadores'
 
 interface Props {
-  game: Iinmunes
+  personaje: ILuchadoresConInmunidades
 }
 
-const GameCard = ({ game }: Props) => {
+const GameCard = ({ personaje }: Props) => {
   return (
     <Card>
-      <Image src={getCroppedImageUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQX5fX4Dppwil8MZPYPx7d4v1rjfN6bl-hNA&s")} />
+      <Image src={getCroppedImageUrl(personaje.luchador.image_background)} />
       <CardBody>
         <HStack justifyContent='space-between' marginBottom={3}>
-          <PlatformIconList danos={game.luchadoresInmunes?.map(p => p.luchadores)} />
-          <CriticScore score={game.iddamage} />
+          <PlatformIconList danos={personaje.parentInmunidades?.map(p => p.inmune)} />
+          <CriticScore score={personaje.luchador.date_release} clase={personaje.luchador.fkclase} />
         </HStack>
-        <Heading fontSize='2xl'>{game.damage}<Emoji rating={5}/></Heading>
+        <Heading fontSize='1xl'>{personaje.luchador.nombre}<Emoji rating={personaje.luchador.fkclase}/></Heading>
       </CardBody>
     </Card>
   )

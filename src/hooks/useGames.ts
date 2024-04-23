@@ -8,6 +8,11 @@ export interface IDamage {
   descripcion: string;
 }
 
+export interface ILuchadoresConInmunidades {
+  luchador: ILuchador
+  parentInmunidades: {inmune: IDamage}[]
+}
+
 export interface Iinmunes {
   iddamage: number;
   damage: string;
@@ -17,7 +22,7 @@ export interface Iinmunes {
 }
 
 const useGames = (gameQuery: GameQuery) =>
-  useData<Iinmunes>(
+  useData<ILuchadoresConInmunidades>(
     "",
     {
       params: {

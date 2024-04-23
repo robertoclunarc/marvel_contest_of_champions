@@ -1,6 +1,6 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import { IDamage } from "../hooks/useGames";
+import { IDamage, ILuchadoresConInmunidades } from "../hooks/useGames";
 import useInmunizados from "../hooks/usePlatforms";
 
 interface Props { 
@@ -8,15 +8,15 @@ interface Props {
   selectedPlatform: IDamage | null;
 }
 
-const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
+const DamageSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
   const { data, error } = useInmunizados();
-
+  console.log(data);
   if (error) return null;
   
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        {selectedPlatform?.damage || 'Damage'}
+        {selectedPlatform?.damage || 'Immunity'}
       </MenuButton>
       <MenuList>
         {data.map(danos => <MenuItem onClick={() => onSelectPlatform(danos)} key={danos.iddamage}>{danos.damage}</MenuItem>)}
@@ -25,4 +25,4 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
   );
 };
 
-export default PlatformSelector;
+export default DamageSelector;
