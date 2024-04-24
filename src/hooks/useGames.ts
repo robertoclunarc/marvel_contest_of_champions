@@ -9,25 +9,23 @@ export interface IDamage {
 }
 
 export interface ILuchadoresConInmunidades {
-  luchador: ILuchador
-  parentInmunidades: {inmune: IDamage}[]
+  luchador: ILuchador;
+  parentInmunidades: {inmune: IDamage}[];
 }
 
 export interface Iinmunes {
   iddamage: number;
   damage: string;
-  //background_image?: string;
   descripcion: string;
   luchadoresInmunes: { luchadores: ILuchador }[];
 }
 
 const useGames = (gameQuery: GameQuery) =>
   useData<ILuchadoresConInmunidades>(
-    "",
+    `/results/${gameQuery.damage?.iddamage}`,
     {
       params: {
-        luchadores: gameQuery.luchador?.idluchador,
-        damages: gameQuery.damage?.iddamage,
+        idLuchador: gameQuery.luchador?.idluchador,
         ordering: gameQuery.sortOrder,
         search: gameQuery.searchText
       },
