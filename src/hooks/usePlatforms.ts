@@ -1,4 +1,4 @@
-import inmunizados from "../data/platforms";
+import inmunizados from "../data/damages.data";
 
 interface Damager {
   iddamage: number;

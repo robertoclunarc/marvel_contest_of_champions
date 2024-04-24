@@ -8,14 +8,14 @@ interface Props {
 
 const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   const sortOrders = [
-    { value: "", label: "All" },
-    { value: "Mystic", label: "Mystic" },
-    { value: "Mutant", label: "Mutant" },
-    { value: "Science", label: "Science" },
-    { value: "Skill ", label: "Skill " },
-    { value: "Tech", label: "Tech" },
-    { value: "Cosmic", label: "Cosmic" },
-    { value: "Combined", label: "Combined" },
+    { value: "", label: "Todo" },
+    { value: "1", label: "Misticos" },
+    { value: "2", label: "Mutantes" },
+    { value: "3", label: "Cientificos" },
+    { value: "4", label: "Habiles " },
+    { value: "5", label: "Tecnologicos" },
+    { value: "6", label: "Cosmicos" },
+    { value: "7", label: "Combinados" },
   ];
 
   const currentSortOrder = sortOrders.find(order => order.value === sortOrder);
@@ -23,7 +23,7 @@ const SortSelector = ({ onSelectSortOrder, sortOrder }: Props) => {
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Order by: {currentSortOrder?.label || 'All'}
+        Ordenar por: {currentSortOrder?.label || 'Todo'}
       </MenuButton>
       <MenuList>
         {sortOrders.map((order) => (

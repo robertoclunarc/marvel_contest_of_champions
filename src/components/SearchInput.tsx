@@ -16,7 +16,7 @@ const SearchInput = ({ onSearch }: Props) => {
     }}>
       <InputGroup>
         <InputLeftElement children={<BsSearch />} />
-        <Input ref={ref} borderRadius={20} placeholder="Buscar Luchador/Inmunidad..." variant="filled" />
+        <Input ref={ref} borderRadius={20} placeholder="Buscar Luchador/Inmunidad o Daño..." variant="filled" />
       </InputGroup>
     </form>
   );

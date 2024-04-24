@@ -8,9 +8,13 @@ interface Props {
 }
 
 const NavBar = ({ onSearch }: Props) => {
+  const handleLogoClick = () => {
+    window.location.reload(); // Recargar la página
+  };
+
   return (
     <HStack padding='10px'>
-      <Image src={logo} boxSize='60px' />
+      <Image src={logo} boxSize='60px' cursor='pointer' title='Marvel Constest Champions (Inicio)'  onClick={handleLogoClick} />
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </HStack>

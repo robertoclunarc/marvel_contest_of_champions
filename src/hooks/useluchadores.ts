@@ -1,4 +1,4 @@
-import luchadores from "../data/luchadores";
+import luchadores from "../data/luchadores.data";
 
 export interface ILuchador {
     idluchador: number;

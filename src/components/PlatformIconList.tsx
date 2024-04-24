@@ -19,7 +19,7 @@ interface Props {
 }
 
 const PlatformIconList = ({ danos = [] }: Props) => {
-  console.log(danos);
+  //console.log(danos);
   const iconMap: { [key: string]: IconType } = { 
     Hemorragia: FaWindows,
     Envenenamiento: FaPlaystation,

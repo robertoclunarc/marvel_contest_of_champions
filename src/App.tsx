@@ -6,20 +6,18 @@ import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import DamageSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
-import { IDamage, ILuchadoresConInmunidades } from "./hooks/useGames";
 import { ILuchador} from "./hooks/useluchadores";
-
 
 export interface GameQuery { 
   luchador: ILuchador | null;
-  damage: IDamage | null;
+  damage: any | null;
   sortOrder: string;
   searchText: string;
 }
 
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
-  console.log(JSON.stringify(gameQuery));
+  //console.log(JSON.stringify(gameQuery));
   return (
     <Grid
       templateAreas={{
