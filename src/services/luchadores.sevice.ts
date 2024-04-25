@@ -1,10 +1,11 @@
 import axios from "axios";
 import { ILuchador } from "../models/luchadores.interface";
+import { environments } from "../environments/environment";
 
 export async function getAll(): Promise<ILuchador[]> {
     try {
       // Realizar la solicitud GET a la API
-      const response = await axios.get('https://api-marvel-constest-champion-production.up.railway.app/MCOC/luchadores/all');
+      const response = await axios.get(`${environments.apiMCOC}/luchadores/all`);
       
       // Devolver los datos de los personajes
       return response.data;

@@ -1,5 +1,6 @@
 import axios from "axios";
+import { environments } from '../environments/environment';
 
 export default axios.create({
-  baseURL: "http://localhost:3000/MCOC/luchadores/all/inmnunidades"
+  baseURL: `${environments.apiMCOC}/luchadores/all/inmnunidades`,
 });
