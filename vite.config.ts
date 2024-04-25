@@ -11,4 +11,6 @@ export default defineConfig({
     host: '0.0.0.0',
     port: Number(process.env.PORT) || 5172,
   },
-})
+});
+
+console.log(`Navegando el el puerto: ${process.env.PORT}`);
